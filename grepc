@@ -2,10 +2,7 @@
 # Grep Chain
 # Edwin Rietmeijer, 2020
 
-words=$@
-
-command=""
-for word in $words
+for word in $@
 do
   command=${command}"grep ${word} "'| '
 done
