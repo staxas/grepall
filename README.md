@@ -2,6 +2,7 @@
 Four solutions for non-positional bound AND grepping
 
 grepa internally creates all possible combinations of AND regexes and connects them up with OR:
+
 ```
 .*word1.*word2|.*word2.*word1
 ```
