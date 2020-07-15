@@ -1,0 +1,45 @@
+#!/bin/bash
+# Grep All
+# Edwin Rietmeijer, 2020
+
+params=($@)
+
+list=""
+list="${list}${params[@]}"$'\n'
+
+n=${#params[@]}
+i=0
+j=1
+while [[ $j -lt $n ]];
+do
+  i=0;
+  while [[ $i -lt $((n-1)) ]];
+  do
+  temp=${params[i]}
+  ipone=$((i + 1))
+  params[i]=${params[$ipone]}
+  params[$ipone]=${temp}
+  list="${list}${params[@]}"$'\n'
+  i=$((i + 1))
+  done
+
+  j=$((j + 1))
+done
+
+regexOuter=""
+
+while IFS= read -r line;
+do
+  arr=($line)
+  regexInner=""
+  for item in ${arr[@]}
+  do
+    regexInner=${regexInner}'.*'${item}
+  done
+  regexOuter="${regexOuter}${regexInner}|"
+done <<< "$list"
+
+regLnt=${#regexOuter}
+regexOuter=${regexOuter:0:$((regLnt-2))}
+
+grep -E "$regexOuter" <&0
