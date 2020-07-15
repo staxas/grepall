@@ -9,7 +9,6 @@ for word in $words
 do
   command=${command}"grep ${word} "'| '
 done
-commLen=${#command}
-command=${command:0:$((commLen - 2))}
+command=${command:0:$((${#command} - 2))}
 
 eval $command <&0
