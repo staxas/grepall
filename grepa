@@ -38,7 +38,6 @@ do
   regexOuter="${regexOuter}${regexInner}|"
 done <<< "$list"
 
-regLnt=${#regexOuter}
-regexOuter=${regexOuter:0:$((regLnt-2))}
+regexOuter=${regexOuter:0:$((${#regexOuter}-2))}
 
 grep -E "$regexOuter" <&0
