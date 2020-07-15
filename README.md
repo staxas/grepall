@@ -1,22 +1,31 @@
 # grepall
-Two solutions for non-positional bound AND grepping
+Four solutions for non-positional bound AND grepping
 
 grepa internally creates all possible combinations of AND regexes and connects them up with OR:
 ```
 .*word1.*word2|.*word2.*word1
 ```
+
 grepc creates a chain of piped greps, each filtering one of the words given as input:
 
 ```
 grep word1 | grep word2
 ```
 
-For both commands, only the keywords need to be given as parameters:
+grepp concatenates a regex command using positive look-ahead:
 
 ```
-cat test.txt | grepa word1 word2
+^(?=.*word1)(?=.*word2)
 ```
-or
+
+awka uses awk instead of grep:
+
 ```
-cat test.txt | grepc word1 word2
+'/word1/ && /word2/'
+```
+
+For all commands, only the keywords need to be given as parameters:
+
+```
+cat test.txt | {command} word1 word2
 ```
