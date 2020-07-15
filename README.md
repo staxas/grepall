@@ -1,7 +1,7 @@
 # grepall
 Four solutions for non-positional bound AND grepping
 
-grepa internally creates all possible combinations of AND regexes and connects them up with OR:
+grepa internally creates all possible combinations of AND-like positional regexes and connects them up with OR:
 
 ```
 .*word1.*word2|.*word2.*word1
@@ -25,7 +25,7 @@ awka uses awk instead of grep:
 '/word1/ && /word2/'
 ```
 
-For all commands, only the keywords need to be given as parameters:
+For all commands, keywords need to be given as parameters:
 
 ```
 cat test.txt | {command} word1 word2
