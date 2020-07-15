@@ -7,7 +7,7 @@ grepc creates a chain of piped greps, each filtering one of the words given as i
 grep word1 | grep word2
 ```
 
-grepp concatenates a regex command using positive look-ahead:
+grepr concatenates a regex command using positive look-ahead:
 
 ```
 ^(?=.*word1)(?=.*word2)
