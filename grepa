@@ -15,14 +15,13 @@ do
   i=0;
   while [[ $i -lt $((n-1)) ]];
   do
-  temp=${params[i]}
-  ipone=$((i + 1))
-  params[i]=${params[$ipone]}
-  params[$ipone]=${temp}
-  list="${list}${params[@]}"$'\n'
-  i=$((i + 1))
+    temp=${params[i]}
+    ipone=$((i + 1))
+    params[i]=${params[$ipone]}
+    params[$ipone]=${temp}
+    list="${list}${params[@]}"$'\n'
+    i=$((i + 1))
   done
-
   j=$((j + 1))
 done
 
