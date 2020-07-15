@@ -1,0 +1,9 @@
+#!/bin/bash
+
+regex="^"
+for word in $@
+do
+  regex=${regex}'(?=.*'${word}')'
+done
+
+grep -P "${regex}" <&0
