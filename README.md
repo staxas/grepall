@@ -16,7 +16,7 @@ grepr concatenates a regex command using positive look-ahead:
 grepa internally creates all possible combinations of AND-like positional regexes and connects them up with OR:
 
 ```
-.*word1.*word2|.*word2.*word1
+word1.*word2|word2.*word1
 ```
 
 awka uses awk instead of grep:

@@ -33,8 +33,13 @@ do
   regexInner=""
   for item in ${arr[@]}
   do
-    regexInner=${regexInner}'.*'${item}
+    if [[ $item != "" ]]; then
+      regexInner=${regexInner}${item}'.*'
+    fi
   done
+  if [[ ${#regexInner} != "0" ]]; then
+    regexInner=${regexInner:0:$((${#regexInner}-2))}
+  fi
   regexOuter="${regexOuter}${regexInner}|"
 done <<< "$list"
 
