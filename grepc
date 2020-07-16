@@ -6,6 +6,6 @@ for word in $@
 do
   command=${command}"grep ${word} "'| '
 done
-command=${command:0:$((${#command} - 2))}
+command=${command:0:$((${#command} - 3))}
 
 eval $command <&0

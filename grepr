@@ -1,4 +1,6 @@
 #!/bin/bash
+# Grep Regex (All)
+# Edwin Rietmeijer, 2020
 
 regex="^"
 for word in $@

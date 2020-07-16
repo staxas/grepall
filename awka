@@ -1,4 +1,7 @@
 #!/bin/bash
+# Awk All
+# Edwin Rietmeijer, 2020
+
 
 for word in $@
 do
