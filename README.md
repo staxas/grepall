@@ -4,9 +4,8 @@ Four solutions for non-positional bound AND searches in Bash output
 For all commands, keywords need to be given as parameters:
 
 ```
-cat test.txt | {command} word1 word2
+cat test.txt | {command} word1 word2 ...
 ```
-
 
 grepc creates a chain of piped greps, each filtering one of the words given as input:
 
