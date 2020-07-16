@@ -1,6 +1,12 @@
 # grepall
 Four solutions for non-positional bound AND grepping
 
+For all commands, keywords need to be given as parameters:
+
+```
+cat test.txt | {command} word1 word2
+```
+
 grepc creates a chain of piped greps, each filtering one of the words given as input:
 
 ```
@@ -23,10 +29,4 @@ awka uses awk instead of grep:
 
 ```
 awk "/word1/ && /word2/"
-```
-
-For all commands, keywords need to be given as parameters:
-
-```
-cat test.txt | {command} word1 word2
 ```
