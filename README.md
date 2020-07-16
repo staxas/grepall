@@ -1,6 +1,5 @@
 # grepall
-Four solutions for non-positional bound AND grepping
-
+Four solutions for non-positional bound AND searches in Bash output
 
 For all commands, keywords need to be given as parameters:
 
