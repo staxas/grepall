@@ -22,7 +22,7 @@ word1.*word2|word2.*word1
 awka uses awk instead of grep:
 
 ```
-'/word1/ && /word2/'
+"/word1/ && /word2/"
 ```
 
 For all commands, keywords need to be given as parameters:
