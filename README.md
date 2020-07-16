@@ -10,19 +10,19 @@ grep word1 | grep word2
 grepr concatenates a regex command using positive look-ahead:
 
 ```
-^(?=.*word1)(?=.*word2)
+grep -P "^(?=.*word1)(?=.*word2)"
 ```
 
 grepa internally creates all possible combinations of AND-like positional regexes and connects them up with OR:
 
 ```
-word1.*word2|word2.*word1
+grep -E "word1.*word2|word2.*word1"
 ```
 
 awka uses awk instead of grep:
 
 ```
-"/word1/ && /word2/"
+awk "/word1/ && /word2/"
 ```
 
 For all commands, keywords need to be given as parameters:
