@@ -15,7 +15,7 @@ grepc creates a chain of piped greps, each filtering one of the words given as i
 grep word1 | grep word2
 ```
 
-grepr uses a regex command based on positive look-ahead:
+grepr creates a regex string based on positive look-ahead:
 
 ```
 grep -P "^(?=.*word1)(?=.*word2)"
